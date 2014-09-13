@@ -1,24 +1,43 @@
-# Chapter 1
-Hello, world!
-Rakesh kumar suthar
+# Learning Git
 
-Learning Git
- git init
+-------------------------------------------------------------------- 
+#creating git repository
+-------------------------------------------------------------------- 
+git init
+
+
+-------------------------------------------------------------------- 
+#display repository status
+-------------------------------------------------------------------- 
 git status
-Create files to commit in remote branch and then
+
+
+-------------------------------------------------------------------- 
+# Adding files in remote branch
+-------------------------------------------------------------------- 
+create file,
 git add *
 git commit –m “message for commit”
 git remote add origin https://github.com/rksuthar19/demojava.git
 git push origin master
 It will create master branch in remote repository.
----------------------------------------------------------------------------------------------------------------------------------
-Now delete your project and see how to pull it from remote
----------------------------------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------- 
+# Cloning repository
+-------------------------------------------------------------------- 
 git clone https://github.com/rksuthar19/demojava.git
 cd “project name”
 git pull
---------------------------------------------------------------------------------------------------------------------------------
-git remote show origin 
+ 
+git clone F:/gitr for checkout local repository 
+
+
+-------------------------------------------------------------------- 
+
+-------------------------------------------------------------------- 
+
+git remote show origin
 * remote origin
   Fetch URL: https://github.com/rksuthar19/demo.git
   Push  URL: https://github.com/rksuthar19/demo.git
@@ -32,17 +51,59 @@ Master
     master merges with remote master
   Local ref configured for 'git push':
     master pushes to master (up to date)
-
- git diff origin/master-copy
+ 
+git diff origin/master-copy
 git checkout master-copy
 git merge master
 git push
-
+ 
 git branch -d master-copy
 Cannot delete the branch 'master-copy' which you are currently on.
 so
 git checkout master
 git branch -d master-copy
 Deleted branch master-copy (was f1dbb56).
-To delete a remote branch 
+To delete a remote branch
 git push origin :master-copy
+
+
+-------------------------------------------------------------------- 
+# uncommitting last commit
+-------------------------------------------------------------------- 
+add a commit
+now if you want to stash your changes and uncommit
+use
+git reset remotes/origin/master
+and if you just want to delete all changes and point to master
+git reset --hard remotes/origin/master
+
+
+-------------------------------------------------------------------- 
+//use of reset
+-------------------------------------------------------------------- 
+git diff --staged - to show diff after git add command
+git add octofamily/octodog.txt
+git diff --staged
+git reset octofamily/octodog.txt
+git checkout -- octodog.txt
+ 
+//creating local branch and working on it and then merge and push it on main branch
+git branch clean_up
+git checkout clean_up
+git rm *.txt
+git commit -m "removing all"
+git checkout master
+git merge clean_up
+git branch -d clean_up
+git push
+ 
+for creating local git repository you have to set core.bare flag to make push successful for that branch
+git config --bool core.bare true
+set core.bare flag true to simply convert your remote repository to bare repository
+
+  
+-------------------------------------------------------------------- 
+# SOME FUN
+-------------------------------------------------------------------- 
+Finding commits log-
+F:\code\devel\optymyze-modules>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
