@@ -1,2 +1,48 @@
 # Chapter 1
 Hello, world!
+Rakesh kumar suthar
+
+Learning Git
+ git init
+git status
+Create files to commit in remote branch and then
+git add *
+git commit –m “message for commit”
+git remote add origin https://github.com/rksuthar19/demojava.git
+git push origin master
+It will create master branch in remote repository.
+---------------------------------------------------------------------------------------------------------------------------------
+Now delete your project and see how to pull it from remote
+---------------------------------------------------------------------------------------------------------------------------------
+git clone https://github.com/rksuthar19/demojava.git
+cd “project name”
+git pull
+--------------------------------------------------------------------------------------------------------------------------------
+git remote show origin 
+* remote origin
+  Fetch URL: https://github.com/rksuthar19/demo.git
+  Push  URL: https://github.com/rksuthar19/demo.git
+  HEAD branch (remote HEAD is ambiguous, may be one of the following):
+Master
+    master-copy
+  Remote branches:
+    master      tracked
+    master-copy new (next fetch will store in remotes/origin)
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+ git diff origin/master-copy
+git checkout master-copy
+git merge master
+git push
+
+git branch -d master-copy
+Cannot delete the branch 'master-copy' which you are currently on.
+so
+git checkout master
+git branch -d master-copy
+Deleted branch master-copy (was f1dbb56).
+To delete a remote branch 
+git push origin :master-copy
