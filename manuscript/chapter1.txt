@@ -1,6 +1,6 @@
 # Chapter 1
 
-[][What is git?]
+___What is git?___
 
 Designed and developed by Linus Torvalds for Linux kernel development in 2005.
 Distributed revision control and source code management (SCM) system 
@@ -15,7 +15,7 @@ download and install Git from link below
 
 http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-[][creating git repository]
+___creating git repository___
 
 create directory (let say c:\demo) where you want to create repository and use command-
 {git init}
@@ -28,7 +28,7 @@ now you can use this repository locally and share with people as a remote reposi
 {git status}
 it will display status which include changes (staged and not changes which are not included in stage)
 
-[][Adding files in repository]
+___Adding files in repository___
 3 step process (adding changes, tracking or staging changes, committing changes)
 
 step 1: create a file say test.txt
@@ -44,7 +44,7 @@ step 3: committing
 
 now we are done with adding file in repository
 
-[][Contributing to remote repository]Using this local repository as a remote repository where people wants to contribute]
+___Contributing to remote repository___Using this local repository as a remote repository where people wants to contribute___
 Step 1:Cloning repository
 I want to use c:\demo repository as a remote repository clone it as a new local repository
 create a new repository let say e:\local
@@ -107,7 +107,7 @@ you can check your origin status using
     master_copy pushes to master_copy (up to date)
 	
 	
-[][working with multiple branch]
+___working with multiple branch___
 concept is -
 if you want to make some change create a branch , apply your changes and when done merge it with remote branch to which you want to contribute and then push to that branch
 
@@ -152,12 +152,12 @@ you cannot delete the branch which you are currently on.
 
 
 
-[][deleting remote branch]
+___deleting remote branch___
 To delete a remote branch let say master_copy use
 {git push origin :master-copy}
 
 
-[][using reset command]
+___using reset command___
 uncommitting last commit
 add a commit
 now if you want to stash your changes and uncommit
@@ -172,7 +172,7 @@ git diff --staged
 git reset octofamily/octodog.txt
 git checkout -- octodog.txt
  
-[][Setting up user profile in git]
+___Setting up user profile in git___
 The first thing you should do when you install Git is to set your user name and e-mail address. 
 This is important because every Git commit uses this information, and it’s immutably baked into the commits you pass around:
 Show user details
@@ -189,6 +189,6 @@ Setting local user details {will be applicable for current repository}
 {git config --local user.email rksuthar19@gmail.com}
 
 
-[][SOME FUN]
+___SOME FUN___
 Checkout commits log-
 F:\local\demo>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
