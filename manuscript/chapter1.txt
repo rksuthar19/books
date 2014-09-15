@@ -2,19 +2,17 @@
 
 **********
 #creating git repository
-**********
+
 git init
 
 
 **********
 #display repository status
-**********
 git status
 
 
 **********
 # Adding files in remote branch
-**********
 create a file say a.txt
 git add *		
 {* means all here, you can specify selective files to add, first check git status to find out added or deleted files}
@@ -26,15 +24,12 @@ It will create master branch in remote repository.
 
 **********
 # Cloning repository
-**********
 git clone https://github.com/rksuthar19/demojava.git
 cd “project name”
 git pull
  
 git clone F:/gitr for checkout local repository 
 
-
-**********
 
 **********
 
@@ -70,7 +65,6 @@ git push origin :master-copy
 
 **********
 # uncommitting last commit
-**********
 add a commit
 now if you want to stash your changes and uncommit
 use
@@ -81,7 +75,6 @@ git reset --hard remotes/origin/master
 
 **********
 //use of reset
-**********
 git diff --staged - to show diff after git add command
 git add octofamily/octodog.txt
 git diff --staged
@@ -105,6 +98,5 @@ set core.bare flag true to simply convert your remote repository to bare reposit
   
 **********
 # SOME FUN
-**********
 Finding commits log-
 F:\code>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
