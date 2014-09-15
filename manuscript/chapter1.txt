@@ -1,31 +1,32 @@
 # Learning Git
 
--------------------------------------------------------------------- 
+**********
 #creating git repository
--------------------------------------------------------------------- 
+**********
 git init
 
 
--------------------------------------------------------------------- 
+**********
 #display repository status
--------------------------------------------------------------------- 
+**********
 git status
 
 
--------------------------------------------------------------------- 
+**********
 # Adding files in remote branch
--------------------------------------------------------------------- 
-create file,
-git add *
-git commit –m “message for commit”
+**********
+create a file say a.txt
+git add *		
+{* means all here, you can specify selective files to add, first check git status to find out added or deleted files}
+git commit –m “adding my first file to repo”
 git remote add origin https://github.com/rksuthar19/demojava.git
 git push origin master
 It will create master branch in remote repository.
 
 
--------------------------------------------------------------------- 
+**********
 # Cloning repository
--------------------------------------------------------------------- 
+**********
 git clone https://github.com/rksuthar19/demojava.git
 cd “project name”
 git pull
@@ -33,9 +34,9 @@ git pull
 git clone F:/gitr for checkout local repository 
 
 
--------------------------------------------------------------------- 
+**********
 
--------------------------------------------------------------------- 
+**********
 
 git remote show origin
 * remote origin
@@ -67,9 +68,9 @@ To delete a remote branch
 git push origin :master-copy
 
 
--------------------------------------------------------------------- 
+**********
 # uncommitting last commit
--------------------------------------------------------------------- 
+**********
 add a commit
 now if you want to stash your changes and uncommit
 use
@@ -78,9 +79,9 @@ and if you just want to delete all changes and point to master
 git reset --hard remotes/origin/master
 
 
--------------------------------------------------------------------- 
+**********
 //use of reset
--------------------------------------------------------------------- 
+**********
 git diff --staged - to show diff after git add command
 git add octofamily/octodog.txt
 git diff --staged
@@ -102,8 +103,8 @@ git config --bool core.bare true
 set core.bare flag true to simply convert your remote repository to bare repository
 
   
--------------------------------------------------------------------- 
+**********
 # SOME FUN
--------------------------------------------------------------------- 
+**********
 Finding commits log-
 F:\code\devel\optymyze-modules>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
