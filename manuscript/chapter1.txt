@@ -107,4 +107,4 @@ set core.bare flag true to simply convert your remote repository to bare reposit
 # SOME FUN
 **********
 Finding commits log-
-F:\code\devel\optymyze-modules>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
+F:\code>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
