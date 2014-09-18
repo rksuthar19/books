@@ -113,6 +113,27 @@ you can check your origin status using
     master_copy pushes to master_copy (up to date)
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 ___Working with multiple branch___
 
 concept is -
@@ -163,6 +184,20 @@ ___Deleting remote branch___
 
 To delete a remote branch let say master_copy use
 {git push origin :master-copy}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ___Using reset command___
