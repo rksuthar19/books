@@ -1,0 +1,83 @@
+# Chapter 2
+
+___Adding files in repository___
+
+3 step process (adding changes, tracking or staging changes, committing changes)
+
+step 1: create a file say test.txt
+now check {git status}
+it will display file test.txt is untracked
+
+step 2: staging untracked changes
+{git add *}		or {git add test.txt}
+(* means all , you can specify selective files to add, first check git status to find out added or deleted files)
+
+step 3: committing
+{git commit –m “adding my first file to repo”}
+
+now we are done with adding file in repository
+
+___Contributing to remote repository___
+
+Using this local repository as a remote repository where people wants to contribute
+
+Step 1:Cloning repository
+I want to use c:\demo repository as a remote repository clone it as a new local repository
+create a new repository let say e:\local
+and try to clone c:\demo {replicating repository}
+{git clone c:\demo} 
+it will clone repository as a local repository
+
+so every repository can be served as remote and locally
+
+step 2: Contribute from my local repository to remote repository 
+in E:\local\demo
+create a file mycontent.txt 
+and now I want to contribute this change to remote repository (c:\demo)
+so let's commit this change 
+{git add mycontent.txt}
+{git commit -m "adding my content"}
+
+now check status {git status}
+It will show your branch is one commit ahead of origin/master(your remote repo c:\demo)
+
+step 3: Pushing to remote repository
+let's try to push this change to remote repository
+{git push}
+push will fail because in your remote repository(c:\demo) currently you have checked out master branch and you cannot push to the one checked out branch of a repository because it would mess with the user of that repository in a way that will most probably end with loss of data and history. 
+But you can push to any other branch of the same repository.
+
+As bare repositories never have any branch checked out, you can always push to any branch of a bare repository.
+
+There are multiple solutions, depending on your needs.
+
+Solution 1: Use a Bare Repostiory
+As suggested, if on one machine, you don't need the working directory, you can move to a bare repository. To avoid messing with the repository.
+
+You can simply convert your remote repository to bare repository (there is no working copy in the bare repository - the folder contains only the actual repository data).
+Execute the following command in your remote repository folder:
+{git config --bool core.bare true} you can set it to false if you again want to use this repo as a working directory
+Now you can try {git push} your changes will be pushed to remote repository
+
+Solution 2: Push to a Non-Checked-Out Branch
+first you have to set your upstream to new branch you want to create
+{git push --set-upstream origin master_copy}
+and then use 
+{git push}
+a new branch master_copy will be create in c:\demo
+
+you can check your origin status using
+{git remote show origin}
+* remote origin
+  Fetch URL: c:\demo
+  Push  URL: c:\demo
+  HEAD branch: master
+  Remote branches:
+    master      tracked
+    master_copy tracked
+  Local branches configured for 'git pull':
+    master      merges with remote master
+    master_copy merges with remote master_copy
+  Local refs configured for 'git push':
+    master      pushes to master      (fast-forwardable)
+    master_copy pushes to master_copy (up to date)

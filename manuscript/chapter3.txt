@@ -1,0 +1,52 @@
+# Chapter 3
+
+___Working with multiple branch___
+
+concept is -
+if you want to make some change create a branch , apply your changes and when done merge it with remote branch to which you want to contribute and then push to that branch
+
+step 1: switch to a branch
+switching to a specific branch workig directory
+{git checkout <branch_name>}
+
+switch to master branch
+{git branch master}
+
+step 2:Create local branch
+now i want to create a my personal local branch and want to do some work (adding myPersonalFile.txt)
+
+when you have checked out remote repository branch (master) and when you say 
+{git branch mypersonal_branch}
+it will create branch from your currently checkoud branch(master)
+
+step 3:Do my work on local branch
+let's add myPersonalFile.txt in this branch and commit changes.
+
+to compare two branch to show difference use
+{git diff <branch to compare>}
+{git diff origin/master}
+
+it will list out all differences (one file added myPersonalFile.txt)
+
+step 3: merging my changes with remote branch
+now after working on a personal branch i think i am done with my work and i want to merge my changes in master branch and commit it
+switch to master branch
+{git branch master}
+merge changes from your personal branch to master
+{git merge mypersonal_branch}
+merging done changes from remote branch and your local changes merged in remote checked out branch
+
+step 4: push my work
+git push
+ 
+step 5: clean up
+now we can delete mypersonal_branch
+git branch -D mypersonal_branch
+you cannot delete the branch which you are currently on.
+
+
+
+___Deleting remote branch___
+
+To delete a remote branch let say master_copy use
+{git push origin :master-copy}

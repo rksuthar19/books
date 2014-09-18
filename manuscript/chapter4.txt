@@ -1,0 +1,40 @@
+# Chapter 4
+
+___Using reset command___
+
+uncommitting last commit
+add a commit
+now if you want to stash your changes and uncommit
+use
+git reset remotes/origin/master
+and if you just want to delete all changes and point to master
+git reset --hard remotes/origin/master
+
+git diff --staged - to show diff after git add command
+git add octofamily/octodog.txt
+git diff --staged
+git reset octofamily/octodog.txt
+git checkout -- octodog.txt
+ 
+___Setting up user profile in git___
+
+The first thing you should do when you install Git is to set your user name and e-mail address. 
+This is important because every Git commit uses this information, and it’s immutably baked into the commits you pass around:
+Show user details
+{git config --global user.name}
+{git config --global user.email}
+
+Setting global user details {will be applicable all repository you create}
+{git config --global user.name "Suthar"}
+{git config --global user.email rksuthar19@gmail.com}
+  
+  
+Setting local user details {will be applicable for current repository}
+{git config --local user.name "Suthar"}
+{git config --local user.email rksuthar19@gmail.com}
+
+
+___Some Fun___
+
+Checkout commits log-
+F:\local\demo>cat | git log --author="suthar" |grep "^commit" |wc -l > author_commits_details.txt
